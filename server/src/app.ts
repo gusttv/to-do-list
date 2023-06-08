@@ -1,5 +1,6 @@
 import express from 'express';
 import routes from './routes';
+import cors  from 'cors';
 
 
 class App {
@@ -14,7 +15,7 @@ class App {
   private config(): void {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    
+    this.app.use(cors());
   }
 
   private routes(): void {
